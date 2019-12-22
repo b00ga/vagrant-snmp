@@ -1,0 +1,25 @@
+---
+- hosts: all
+  become: yes
+
+  tasks:
+  - debug:
+      msg: 'Greetings from family {{ ansible_os_family }} / distro {{ ansible_distribution }}'
+
+  - name: Setup apt repositories
+    include_role:
+      name: 'bramford.apt-sources'
+    when: ansible_os_family == 'Debian'
+
+  - group_by: key=os_{{ ansible_os_family }}
+
+  - name: Install net-snmp
+    package:
+      name: '{{ netsnmp_pkgs }}'
+      state: present
+
+  - name: Make sure snmpd is running and starts at boot
+    service:
+      name: 'snmpd'
+      state: started
+      enabled: yes

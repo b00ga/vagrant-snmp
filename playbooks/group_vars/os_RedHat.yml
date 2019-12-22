@@ -1,0 +1,2 @@
+---
+netsnmp_pkgs: 'net-snmp,net-snmp-utils'
