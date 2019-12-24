@@ -2,6 +2,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "ansible", type: "shell",
     inline: "echo Provisioning..."
 
+  config.vm.synced_folder "shared-folder", "/vagrant"
   config.vm.synced_folder "playbooks", "/ansible"
 
   config.vm.define "centos7" do |machine|
@@ -12,6 +13,7 @@ Vagrant.configure("2") do |config|
   end
   config.vm.define "freebsd12" do |machine|
     machine.vm.box = "bento/freebsd-12"
+    machine.vm.synced_folder "shared-folder", "/vagrant", type: "rsync"
     machine.vm.synced_folder "playbooks", "/ansible", type: "rsync"
     machine.vm.provision "ansible", type: "shell",
       preserve_order: true,
