@@ -6,6 +6,11 @@
   - debug:
       msg: 'Greetings from family {{ ansible_os_family }} / distro {{ ansible_distribution }}'
 
+  - name: Install misc extra packages and tools
+    package:
+      name: 'vim,expect'
+      state: present
+
   - name: Setup apt repositories
     include_role:
       name: 'bramford.apt-sources'
