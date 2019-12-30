@@ -1,2 +1,2 @@
 ---
-netsnmp_pkgs: 'net-snmp'
+netsnmp_pkgs: 'net-snmp,libsmi'

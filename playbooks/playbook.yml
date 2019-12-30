@@ -8,7 +8,7 @@
 
   - name: Install misc extra packages and tools
     package:
-      name: 'vim,expect'
+      name: 'vim,expect,git'
       state: present
 
   - name: Setup apt repositories

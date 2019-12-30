@@ -1,2 +1,2 @@
 ---
-netsnmp_pkgs: 'snmp,libsnmp-dev,snmpd,snmptrapd,snmp-mibs-downloader'
+netsnmp_pkgs: 'snmp,libsnmp-dev,snmpd,snmptrapd,snmp-mibs-downloader,smistrip,smitools'
