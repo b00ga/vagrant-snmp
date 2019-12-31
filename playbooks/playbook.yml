@@ -23,6 +23,13 @@
       name: '{{ netsnmp_pkgs }}'
       state: present
 
+  - name: Enable standard MIBs on Debian
+    replace:
+      path: '/etc/snmp/snmp.conf'
+      regexp: '^mibs :$'
+      replace: '#mibs :'
+    when: ansible_os_family == 'Debian'
+
   - name: Make sure snmpd is running and starts at boot
     service:
       name: 'snmpd'
