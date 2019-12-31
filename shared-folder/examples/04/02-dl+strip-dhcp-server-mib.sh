@@ -1,7 +1,6 @@
 #!/bin/sh
 
 cd
-mkdir .snmp/mibs
 
 echo "====> Downloading DHCP Server MIB IETF draft document..."
 curl -OL https://tools.ietf.org/id/draft-ietf-dhc-server-mib-10.txt

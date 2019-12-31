@@ -1,7 +1,6 @@
 #!/bin/sh
 
 cd
-mkdir -p .snmp/mibs
 
 echo "====> Copy CISCO-AAA-SESSION-MI from netdisco to .snmp/mibs..."
 cp .snmp/mibs/netdisco-mibs/cisco/CISCO-AAA-SESSION-MIB.my .snmp/mibs

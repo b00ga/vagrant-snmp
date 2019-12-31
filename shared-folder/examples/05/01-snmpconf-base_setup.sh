@@ -1,5 +1,6 @@
 #!/bin/sh -ex
 
+cd
 if [ ! -d chap05 ]; then
    mkdir chap05
 fi
